@@ -1,3 +1,6 @@
 export default {
-  ApiKey: "18623551-685e1819373a3e2d77873e072",
+  body: document.querySelector("body"),
+  form: document.getElementById("search-form"),
+  input: document.getElementById("query"),
+  galleryList: document.querySelector(".gallery"),
 };

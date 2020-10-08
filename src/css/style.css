@@ -2,3 +2,33 @@ body {
   background-color: black;
   color: wheat;
 }
+
+.search-form {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#query {
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: peachpuff;
+  color: brown;
+}
+.loadMore-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 10px;
+  background-color: peachpuff;
+  color: brown;
+}
+
+.hidden {
+  display: none;
+}
