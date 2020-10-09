@@ -32,3 +32,20 @@ body {
 .hidden {
   display: none;
 }
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 10px;
+  list-style: none;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+}
+
+.stats-item {
+  padding: 10px;
+}

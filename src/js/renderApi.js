@@ -2,24 +2,41 @@ import refs from "./refs.js";
 import apiService from "./apiService.js";
 import template from "../template/template.hbs";
 import debounce from "lodash.debounce";
+import * as basicLightbox from "basiclightbox";
+import "../../node_modules/basiclightbox/dist/basicLightbox.min.css";
 
-const loadMoreBtn = document.createElement("button");
+refs.galleryList.addEventListener("click", (event) => {
+  const imgModal = document.querySelector(".imgModal");
+
+  if (event.target.nodeName === "IMG") {
+    let modalSrc = event.target.dataset.src;
+
+    const instance = basicLightbox.create(`
+    <div class="modal">
+    <button class="js-modal-btn">X</button>
+      <img class='imgModal' src="${modalSrc}" alt="image">
+    </div>
+`);
+
+    instance.show();
+  }
+
+  console.dir(event.target);
+});
 
 refs.form.addEventListener(
   "input",
   debounce((event) => {
     event.preventDefault();
-    // console.log(event.target.value);
+    refs.galleryList.innerHTML = "";
     apiService.query = event.target.value;
     renderApi();
-    refs.form.value = "";
-  }, 500)
+    refs.input.value = "";
+  }, 700)
 );
 
-loadMoreBtn.addEventListener("click", loadMore);
-
 function renderApi() {
-  apiService.fetchImages().then(({ hits }) => renderImages(hits));
+  apiService.fetchImages().then((data) => renderImages(data));
 }
 
 function renderImages(data) {
@@ -37,7 +54,18 @@ function renderImages(data) {
   }
 }
 
+const loadMoreBtn = document.createElement("button");
+
+loadMoreBtn.addEventListener("click", loadMore);
+
 function loadMore() {
   apiService.setPage();
-  apiService.fetchImages().then(({ hits }) => renderImages(hits));
+  apiService.fetchImages().then((data) => renderImages(data));
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: document.documentElement.offsetHeight - 800,
+      behavior: "smooth",
+    });
+  }, 700);
 }

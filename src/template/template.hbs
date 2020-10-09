@@ -1,7 +1,7 @@
 {{#each this}}
 <li>
     <div class="photo-card">
-        <img width="{{webformatWidth}}" src="{{webformatURL}}" alt="{{tags}}" data-src="{{largeImageURL}}"
+        <img width="400" height="300" src="{{webformatURL}}" alt="{{tags}}" data-src="{{largeImageURL}}"
             data-index="{{@index}}" />
 
         <div class="stats">
@@ -25,14 +25,3 @@
     </div>
 </li>
 {{/each}}
-
-
-
-{{!-- Тебе интересны следующие свойства:
-
-webformatURL - ссылка на маленькое изображение для списка карточек
-largeImageURL - ссылка на большое изображение (смотри пункт 'дополнительно')
-likes - количество лайков
-views - количество просмотров
-comments - количество комментариев
-downloads - количество загрузок --}}
