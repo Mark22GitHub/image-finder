@@ -3,6 +3,13 @@ body {
   color: wheat;
 }
 
+li {
+  margin-bottom: 20px;
+  border: 2px dashed peachpuff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .search-form {
   display: flex;
   justify-content: center;

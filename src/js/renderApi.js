@@ -13,7 +13,7 @@ refs.galleryList.addEventListener("click", (event) => {
 
     const instance = basicLightbox.create(`
     <div class="modal">
-    <button class="js-modal-btn">X</button>
+   
       <img class='imgModal' src="${modalSrc}" alt="image">
     </div>
 `);
@@ -32,7 +32,7 @@ refs.form.addEventListener(
     apiService.query = event.target.value;
     renderApi();
     refs.input.value = "";
-  }, 700)
+  }, 1000)
 );
 
 function renderApi() {
