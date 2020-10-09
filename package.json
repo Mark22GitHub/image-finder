@@ -13,12 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/Mark22GitHub/image-finder"
   },
-  "author": "",
+  "author": "Mark",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mark22GitHub/image-finder"
   },
-  "homepage": "//",
+  "homepage": "https://mark22github.github.io/image-finder/",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
